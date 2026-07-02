@@ -101,12 +101,11 @@ def exoml(content: str) -> Response:
 
 def say(text: str, lang: str = "en-IN", voice: str = "female") -> str:
     """Generate a <Say> ExoML tag."""
-    return f'  <Say language="{lang}" voice="{voice}">{text}</Say>'
+    return f'  <Say voice="{voice}">{text}</Say>'
 
 
 def gather(action_url: str, num_digits: int = 1, timeout: int = 5, content: str = "") -> str:
-    """Generate a <Gather> ExoML tag."""
-    return f"""  <Gather action="{action_url}" numDigits="{num_digits}" timeout="{timeout}" method="POST">
+    return f"""  <Gather action="{action_url}" numDigits="{num_digits}" timeout="{timeout}">
 {content}
   </Gather>"""
 
@@ -117,9 +116,8 @@ def redirect(url: str) -> str:
 
 
 def transfer_sip(sip_uri: str) -> str:
-    """Generate a <Dial> ExoML tag to transfer to SIP trunk."""
     return f"""  <Dial>
-    <Sip>{sip_uri}</Sip>
+    <Number>{sip_uri}</Number>
   </Dial>"""
 
 
