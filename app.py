@@ -32,7 +32,7 @@ app = Flask(__name__)
 # ─────────────────────────────────────────────────────────────
 
 # Your server's public base URL (replace with your ngrok/server URL)
-BASE_URL = "https://your-server.com"
+BASE_URL = "https://hindware-ivr.onrender.com"
 
 # ── Language map ──
 # Key   = digit pressed by caller
