@@ -154,7 +154,7 @@ def welcome():
     content = gather(
         action_url=action_url,
         num_digits=1,
-        timeout=5,
+        timeout=15,
         content=lang_prompts
     )
 
